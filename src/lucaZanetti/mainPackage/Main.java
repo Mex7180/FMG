@@ -1,12 +1,6 @@
 package lucaZanetti.mainPackage;
 
-
-import java.awt.Graphics;
-import java.awt.Point;
-import java.io.Console;
 import java.nio.file.Paths;
-
-import javax.swing.JPanel;
 
 import lucaZanetti.GUI.GUIMain;
 

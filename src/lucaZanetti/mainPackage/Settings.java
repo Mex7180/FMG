@@ -15,9 +15,9 @@ public class Settings {
 	static int FactorPointToWindowHeight = 5;
 	static int FactorPointToWindowWidth = 5;
 	static int RandomIntervall = 50;
-	static String Mainpath = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParent().toString();
-	public static String SettingsPath = Mainpath+"/FMGSettings.txt";
-	public static String imagePath = Mainpath+"/res/";
+	static String mainPath = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParent().toString();
+	public static String SettingsPath = mainPath+"/res/FMGSettings.txt";
+	public static String imagePath = mainPath+"/res/";
 
 	static boolean CreateFileOf = true;
 	public static int IterationAmount = 300;
@@ -57,7 +57,13 @@ public class Settings {
 	public static int factorGaussianRand = 6;
 	
 	//getters and setters for all variables
+	private static void refreshPaths() {
+		setSettingsPath(Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParent().toString()+"/res/FMGSettings.txt");
+		setImagePath(Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParent().toString()+"/res/");
+	}
+	
 	public static String getImagePath() {
+		refreshPaths();
 		return imagePath;
 	}
 
@@ -240,7 +246,7 @@ public class Settings {
 	}
 
 	public static void setMainpath(String mAINPATH) {
-		Mainpath = mAINPATH;
+		mainPath = mAINPATH;
 	}
 
 	public static void setCreateFileOf(boolean createFileOf) {
@@ -297,7 +303,8 @@ public class Settings {
 
 
 	public static String getMainpath() {
-		return Mainpath;
+		refreshPaths();
+		return mainPath;
 	}
 
 	public static boolean isCreateFileOf() {
@@ -415,6 +422,7 @@ public class Settings {
 
 
 	public static String getSettingsPath() {
+		refreshPaths();
 		return SettingsPath;
 	}
 

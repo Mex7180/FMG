@@ -2,8 +2,8 @@ ANZAHLPUNKTE 150
 FAKTORPUNKTEZUFENSTERLAENGE 5
 FAKTORPUNKTEZUFENSTERBREITE 5
 RandomIntervall 50
-COUNTERPATH /Users/Luca/Documents/Counter.txt
-MAINPATH /Users/Luca/Documents/Polyline/
+COUNTERPATH notUsedAnymore
+MAINPATH /Users/luca/Documents/EclipseWorkspace/BergkettenGenerierenFinal
 CreateFileOf true
 ITERATIONENANZAHL 300
 CASE 10
@@ -16,4 +16,4 @@ JMCRadius 3.0
 C -0.6|-0.6
 StartPunktSchneeFlocke 100|300
 EndPunktSchneeFlocke 600|300
-EinstellungenDateiPfad src/settings
+EinstellungenDateiPfad /Users/luca/Documents/EclipseWorkspace/BergkettenGenerierenFinal/res/FMGSettings.txt

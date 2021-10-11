@@ -24,9 +24,7 @@ public class SettingsMethods {
 	 * Also included are the queries before every
 	 * generation or in the settings window
 	 */
-	public static String pathName = "src/settings";
-	private JDialog dialog;
-	private Path path;
+	public static String pathName = "res/settings";
 
 	public String getPathName() {
 		return pathName;
@@ -42,9 +40,10 @@ public class SettingsMethods {
 	public void safeSettings(String path) {
 		//Test if the file exist, if not a new one is created
 		File file = new File(path);
-		
+		System.out.println(path);
 		if(file.exists() == false) {
-			ErrorMessage fl = new ErrorMessage("Fehler beim Speichern der Einstellungen");
+			ErrorMessage fl = new ErrorMessage("Fehler beim Speichern der Einstellungen ");
+			System.out.println(Settings.getSettingsPath());
 			return;
 		} else {
 			//Write all settings down in the file

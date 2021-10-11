@@ -16,7 +16,7 @@ public class SFMountain extends JPanel{
 	 */
 	Point startPoint;
 	Point endPoint;
-	int maxAnzahlEbenen = Settings.getIterationAmount();
+	int maxAmountLayers = Settings.getIterationAmount();
 	// Constructor to the class, creates an JPanel with the used settings
 	public SFMountain() {
 		setSize(Settings.WindowLengh, Settings.WindowHeight);
@@ -32,24 +32,24 @@ public class SFMountain extends JPanel{
 		int x = 0;
 		int y;
 		startPoint = new Point(x, 300);
-		Random anzahlPunkte = new Random();
-		int Punkte = anzahlPunkte.nextInt(30);
+		Random randomAmountPoints = new Random();
+		int amountOfPoints = randomAmountPoints.nextInt(30);
 		// Test if the amount of chosen points is under 10; if yes: 10 is added to the amount
-		if(Punkte < 10) {
-			Punkte = Punkte+10;
+		if(amountOfPoints < 10) {
+			amountOfPoints = amountOfPoints+10;
 		}
 		//For loop for each point, in which the y value is defined and added
-		for(int i = 0; i < Punkte; i ++) {
+		for(int i = 0; i < amountOfPoints; i ++) {
 			
-			Random ranx = new Random();
-			Random rany = new Random();
-			x = x+ranx.nextInt(100)+Settings.WindowLengh/2/Punkte;
+			Random ranX = new Random();
+			Random ranY = new Random();
+			x = x+ranX.nextInt(100)+Settings.WindowLengh/2/amountOfPoints;
 			
-			y = rany.nextInt(50)*8;
+			y = ranY.nextInt(50)*8;
 			endPoint = new Point(x, y);
 			//Create snow flakes between to points, for that the CreateSnowFlake class is used
-			CreateSnowFlake CSF = new CreateSnowFlake(startPoint, endPoint, maxAnzahlEbenen);
-			CSF.newSF(g, startPoint, endPoint, maxAnzahlEbenen, 1);
+			CreateSnowFlake CSF = new CreateSnowFlake(startPoint, endPoint, maxAmountLayers);
+			CSF.newSF(g, startPoint, endPoint, maxAmountLayers, 1);
 			CSF.fillMountain(g);
 			startPoint = endPoint;
 		}

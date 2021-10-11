@@ -20,15 +20,15 @@ public class WindowListeners implements WindowListener{
 	
 	
 	public void windowClosing(WindowEvent e) {
-		int Eingabe = JOptionPane.showConfirmDialog(null, "Willst du das gesamte Programm beenden?", "WARNUNG" , 0);
+		int Eingabe = JOptionPane.showConfirmDialog(null, "Do you want to close the program?", "WARNING" , 0);
 		
 		if(Eingabe == 0) {
 			try {
 				SettingsMethods SM = new SettingsMethods();
 				SM.safeSettings(Settings.getSettingsPath());
 			} catch(Exception exce) {
-				ErrorMessage fl = new ErrorMessage("Konnte die Einstellungen nicht speichern! "+(String)exce.getMessage()+"");
-				System.out.print("F");
+				ErrorMessage fl = new ErrorMessage("Could bot safe the settings! Path: "+Settings.getSettingsPath());
+				System.out.println("Error while saving the settings");
 			}
 			
 			if(fractalFrame != null) fractalFrame.dispose();
@@ -50,7 +50,7 @@ public class WindowListeners implements WindowListener{
 				e.getWindow().dispose();
 				fractalFrame.setVisible(true);
 			} else
-				System.out.println("[FEHLER] FEHLER BEI WINDOWCLOSING EVENT IN WINDOWLISTENERS");
+				System.out.println("[Error] Error with the windowclosing event in windowlisteners!");
 		}
 		return;
 	}
