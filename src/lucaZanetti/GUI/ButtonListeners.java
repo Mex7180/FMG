@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import lucaZanetti.mainPackage.Graphic;
 import lucaZanetti.mainPackage.Settings;
 
-
 public class ButtonListeners implements ActionListener{
 	/* Buttonlisteners for all GUI's
 	 * Class with the actionListener to check for all interactions with buttons on all GUIs
@@ -38,13 +37,11 @@ public class ButtonListeners implements ActionListener{
 			GUISettings GUIE = new GUISettings();
 			mainFrame.setVisible(false);
 			
-			
-			
 			//GUI with the generation options for the different fractal approaches and fractals
 			
 			
 			//PolyLine
-		} else if(source == FractalGUI.BPolyLineC) {
+		} else if(source == FractalGUI.buttonPolyLine) {
 			
 			GUISettings GUIE = new GUISettings(false);
 			generatingCase = GUIE.PolyLineQuery();
@@ -54,7 +51,7 @@ public class ButtonListeners implements ActionListener{
 			}
 			GUIE.getDialog().dispose();
 			//Julia Set
-		} else if(source == FractalGUI.BJSC) {
+		} else if(source == FractalGUI.buttonJuliaSet) {
 			GUISettings GUIE = new GUISettings(false);
 			generatingCase = GUIE.JMQuery();
 			if(generatingCase == 0) {
@@ -63,7 +60,7 @@ public class ButtonListeners implements ActionListener{
 			}
 			GUIE.getDialog().dispose();
 			//snow flake
-		} else if(source == FractalGUI.BSF) {
+		} else if(source == FractalGUI.buttonSnowFlake) {
 			GUISettings GUIE = new GUISettings(false);
 			generatingCase = GUIE.CSFQuery();
 			if(generatingCase == 0) {
@@ -72,7 +69,7 @@ public class ButtonListeners implements ActionListener{
 			}
 			GUIE.getDialog().dispose();
 			//snow flake mountain
-		} else if(source == FractalGUI.BSFMountain) {
+		} else if(source == FractalGUI.buttonSnowFflakeMountain) {
 			GUISettings GUIE = new GUISettings(false);
 			generatingCase = GUIE.CSFQuery();
 			if(generatingCase == 0) {
@@ -81,7 +78,7 @@ public class ButtonListeners implements ActionListener{
 			}
 			GUIE.getDialog().dispose();
 			//Sierpinski triangle
-		} else if(source == FractalGUI.BST) {
+		} else if(source == FractalGUI.buttonSierpinskiTriangle) {
 			GUISettings GUIE = new GUISettings(false);
 			generatingCase = GUIE.sierpinskiTriangel();
 			if(generatingCase == 0) {
@@ -90,7 +87,7 @@ public class ButtonListeners implements ActionListener{
 			}
 			GUIE.getDialog().dispose();
 			//Midpoint displacement method
-		} else if(source == FractalGUI.DSMVC) {
+		} else if(source == FractalGUI.buttonMidpointDisplacement) {
 			GUISettings GUIE = new GUISettings(false);
 			generatingCase = GUIE.MidpointdisplacementQuery();
 			if(generatingCase == 0) {
@@ -98,7 +95,7 @@ public class ButtonListeners implements ActionListener{
 				graphicFrame = graphikInit();
 			}
 			// Overlapping frequencies
-		} else if(source == FractalGUI.BOverlappingFrequencies) {
+		} else if(source == FractalGUI.buttonOverlappingFrequencies) {
 			GUISettings GUIS = new GUISettings(false);
 			generatingCase = GUIS.CosSinFrequencies();
 			if(generatingCase == 0) {
@@ -106,7 +103,7 @@ public class ButtonListeners implements ActionListener{
 				graphicFrame = graphikInit();
 			}
 			// Cantor Dust
-		} else if(source == FractalGUI.BCS) {
+		} else if(source == FractalGUI.buttonCantorDust) {
 			Settings.setCase(7);
 			graphicFrame = graphikInit();
 			//Back to the main menu
@@ -114,7 +111,7 @@ public class ButtonListeners implements ActionListener{
 			mainFrame.setVisible(true);
 			FractalGUI.fractalGUI.dispose();		
 			// polyline 2, Perlin Noise 
-		} else if(source == FractalGUI.BPolyLineV2) {
+		} else if(source == FractalGUI.buttonPolyLineV2) {
 			GUISettings GUIS = new GUISettings(false);
 			generatingCase = GUIS.polyLineV2();
 			if(generatingCase == 0) {
@@ -125,45 +122,54 @@ public class ButtonListeners implements ActionListener{
 		}else if(source == bGraphicBack) {
 			fractalGUI.setVisible(true);
 			graphicFrame.dispose();
+			
 			//Settings polyline
 		} else if(source == GUISettings.polyLineS){
 			GUISettings GUIE = new GUISettings(false);
 			GUIE.PolyLineQuery();
 			GUIE.getDialog().dispose();
+			
 			//back to main menu
 		} else if(source == GUISettings.back) {
 			GUISettingsW.dispose();
 			mainFrame.setVisible(true);
+			
 			//Settings Julia Set
 		} else if(source == GUISettings.JMCS) {
 			GUISettings GUIE = new GUISettings(false);
 			GUIE.JMQuery();
 			GUIE.getDialog().dispose();
+			
 			//settings snow flake
 		} else if(source == GUISettings.SFCS) {
 			GUISettings GUIE = new GUISettings(false);
 			GUIE.CSFQuery();
 			GUIE.getDialog().dispose();
+			
 			//settings Sierpisnki triangle
 		} else if(source == GUISettings.ST) {
 			GUISettings GUIE = new GUISettings(false);
 			GUIE.sierpinskiTriangel();
 			GUIE.getDialog().dispose();
+			
 			//settings polyline 2
 		} else if(source == GUISettings.polyLineV2) {
 			GUISettings GUIS = new GUISettings(false);
 			GUIS.polyLineV2();
 			GUIS.getDialog().dispose();
+			
 			//settings for frequencies overlapping
 		} else if(source == GUISettings.cosSinFreq) {
 			GUISettings GUIS = new GUISettings(false);
 			GUIS.CosSinFrequencies();
 			GUIS.getDialog().dispose();
+			
 			//snow flake mountains
 		} else if(source == GUISettings.SFMS) {
 			GUISettings GUIS = new GUISettings(false);
 			GUIS.CSFQuery();
 			GUIS.getDialog().dispose();
+			
 			//settings midpoint displacement
 		} else if(source == GUISettings.MPDS) {
 			GUISettings GUIS = new GUISettings(false); 

@@ -40,6 +40,7 @@ public class PolyLineCreator extends JPanel{
 		}
 		return yPoints;
 	}
+	
 	/* Paint method to paint the generation when 
 	 * the object is created. Starts the generation 
 	 * by calling the createNewPolyLine() method
@@ -66,12 +67,14 @@ public class PolyLineCreator extends JPanel{
 		g2D.setColor(PenColor);
 		g2D.drawPolyline(xPoints, yPoints, numberOfPoints);
 	}
+	
 	//Constructor for the classs as an JPanel with the used settings
 	public PolyLineCreator() {
 		setSize(Settings.WindowLengh, Settings.WindowHeight);
 		setBackground(Color.WHITE);
 		setVisible(true);
 	}
+	
 	/* Method to fill the mountain generation
 	 * takes the x and y values in form from Arrays
 	 * as input.

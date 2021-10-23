@@ -13,22 +13,21 @@ import javax.swing.JPanel;
 
 import lucaZanetti.mainPackage.Settings;
 
-
 public class FractalGUI extends JFrame{
 	/* GUI with the fractal approaches
 	 * JFrame and JPanel for the GUI, including all the buttons which are controlled by an actionlistener in the class ButtonListener.java
 	 */
 	public static JFrame fractalGUI; public JPanel fractalPanel;
-	public static JButton BPolyLineC;
-	public static JButton BJSC;
-	public static JButton BSF;
-	public static JButton BSFMountain;
+	public static JButton buttonPolyLine;
+	public static JButton buttonJuliaSet;
+	public static JButton buttonSnowFlake;
+	public static JButton buttonSnowFflakeMountain;
 	public static JButton back;
-	public static JButton DSMVC;
-	public static JButton BST;
-	public static JButton BCS;
-	public static JButton BOverlappingFrequencies;
-	public static JButton BPolyLineV2;
+	public static JButton buttonMidpointDisplacement;
+	public static JButton buttonSierpinskiTriangle;
+	public static JButton buttonCantorDust;
+	public static JButton buttonOverlappingFrequencies;
+	public static JButton buttonPolyLineV2;
 	private JLabel mountainGenerating;
 	private JLabel fractalFigures;
 	private String imagePath = Settings.getImagePath()+"FractalGUIPicture.png";
@@ -62,21 +61,21 @@ public class FractalGUI extends JFrame{
 		fractalPanel.setVisible(true);
 		
 		mountainGenerating = newLabel("Create mountains                  ");
-		BPolyLineC = newButton("Random generation with height (y-value) displacement (Polyline)");
+		buttonPolyLine = newButton("Random generation with height (y-value) displacement (Polyline)");
 		
-		BSFMountain = newButton("Mountains with snow flakes by Koch");
+		buttonSnowFflakeMountain = newButton("Mountains with snow flakes by Koch");
 		
-		DSMVC = newButton("Mountains with the midpoint displacement method");
+		buttonMidpointDisplacement = newButton("Mountains with the midpoint displacement method");
 		
-		BOverlappingFrequencies = newButton("Mountain with stacked frequencies");
+		buttonOverlappingFrequencies = newButton("Mountain with stacked frequencies");
 		
-		BPolyLineV2 = newButton("Mountain out of easy Perlin Noise methode (Polyline V2)");
+		buttonPolyLineV2 = newButton("Mountain out of easy Perlin Noise methode (Polyline V2)");
 		
 		fractalFigures = newLabel("Fractal figures                   ");
-		BST = newButton("Generate a Sierpinski-Triangle");
-		BCS = newButton("Generate Cantor-Dust");
-		BJSC = newButton("Create a Julia Set");
-		BSF = newButton("Create a snow flake by Koch");
+		buttonSierpinskiTriangle = newButton("Generate a Sierpinski-Triangle");
+		buttonCantorDust = newButton("Generate Cantor-Dust");
+		buttonJuliaSet = newButton("Create a Julia Set");
+		buttonSnowFlake = newButton("Create a snow flake by Koch");
 		
 		back = newButton("Back");
 
@@ -91,8 +90,10 @@ public class FractalGUI extends JFrame{
 		fractalPanel.add(button);
 		return button;
 	}
-	
-	private JLabel newLabel(String displayText) { // Constructor for JLabels with text as titles 
+	/* Method to create new JLabels as titles. Takes the displayed text as input and 
+	 * returns an JLabel object
+	 */
+	private JLabel newLabel(String displayText) { 
 		JLabel label = new JLabel(displayText);
 		label.setFont(new Font(null, ALLBITS, ALLBITS));
 		fractalPanel.add(label);

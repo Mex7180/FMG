@@ -8,8 +8,6 @@ public class ComplexNumber {
 	 */
 	private double realPart;
 	private double imaginaryPart;
-	
-	private double angle;
 	private double r;
 	
 	//Constructor for a complex number
@@ -30,6 +28,7 @@ public class ComplexNumber {
 		ComplexNumber result = new ComplexNumber(realRes, imaginaerRes);
 		return result;
 	}
+	
 	/* Subtract a second complex number from the first one,
 	 * returns the new complex number with keeping the old value for the one,
 	 * by which the function was called.
@@ -54,19 +53,14 @@ public class ComplexNumber {
 		
 		return quadrat;
 	}
-	/*
-	 * Getters and setters 
-	 */
+	
+	// Getters and setters 
 	public double getRealPart() {
 		return realPart;
 	}
 	
 	public double getImaginaryPart(){
 		return imaginaryPart;
-	}
-	
-	public double getAngle() {
-		return angle;
 	}
 	
 	public double getR() {

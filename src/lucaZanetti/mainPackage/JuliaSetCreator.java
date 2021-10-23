@@ -2,9 +2,6 @@ package lucaZanetti.mainPackage;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point;
-import java.util.ArrayList;
-
 import javax.swing.JPanel;
 
 public class JuliaSetCreator extends JPanel{
@@ -45,6 +42,7 @@ public class JuliaSetCreator extends JPanel{
 		 */
 		return amountIterations;
 	}
+	
 	/* The paint method to paint when the object is created
 	 * Also controls the generation in a for loop
 	 * in which every point of the window is given in to the
@@ -56,7 +54,7 @@ public class JuliaSetCreator extends JPanel{
 		int width = Settings.WindowLengh;
 		
 		JuliaSetCreator JSC = new JuliaSetCreator();
-		int iterationAmmount;
+		int iterationAmount;
 
 		/* Begin the iteration of every single point by calling
 		 * the juliaSetPixelIteration method
@@ -65,31 +63,38 @@ public class JuliaSetCreator extends JPanel{
 			
 			for(int x = 0; x <= width; x++) {
 				
-				iterationAmmount = JSC.juliaSetPixelIteration((long)x, (long)y, Settings.C);
-
-				/* Define the used color in the generation and test if the value
-				 * is outside of the range (>255)
-				 */
-				int colorNumber = iterationAmmount*40;
-				while(colorNumber>3*253) {
-					colorNumber= colorNumber-3*253;
-				}
-				Color dotColor = null;
-				if(colorNumber > 2*253) {
-					colorNumber = colorNumber-2*253;
-					dotColor = new Color(colorNumber,0 , 0);
-				} else if(colorNumber > 253) {
-					colorNumber = colorNumber-253;
-					dotColor = new Color(0, colorNumber, 0);
-				} else {
-					dotColor = new Color(0,0, colorNumber);
-				}
-				
-				g.setColor(dotColor);
+				iterationAmount = JSC.juliaSetPixelIteration((long)x, (long)y, Settings.C);
+				g.setColor(defineColorForJuliaSet(iterationAmount));
 				g.drawOval(x, y, 1, 1);
 			}
 		}
 	}
+	/* Method to define the used color for a specific pixel
+	 * Takes the amount of iterations calculated in juliaSetPixelIteration()
+	 * and defines a color depending on this amount
+	 */
+	private Color defineColorForJuliaSet(int iterationAmount) {
+		
+		int colorNumber = iterationAmount*40;
+		Color color;
+		
+		while(colorNumber>3*253) {
+			colorNumber= colorNumber-3*253;
+		}
+		
+		if(colorNumber > 2*253) {
+			colorNumber = colorNumber-2*253;
+			color = new Color(colorNumber,0 , 0);
+		} else if(colorNumber > 253) {
+			colorNumber = colorNumber-253;
+			color = new Color(0, colorNumber, 0);
+		} else {
+			color = new Color(0,0, colorNumber);
+		}
+		
+		return color;
+	}
+	
 	//Constructor of the class as a JPanel
 	public JuliaSetCreator() {
 		panel = this;

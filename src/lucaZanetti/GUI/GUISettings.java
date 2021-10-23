@@ -1,6 +1,5 @@
 package lucaZanetti.GUI;
 
-
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Point;
@@ -15,7 +14,6 @@ import javax.swing.JTextField;
 
 import lucaZanetti.mainPackage.ComplexNumber;
 import lucaZanetti.mainPackage.Settings;
-
 
 public class GUISettings extends JFrame{
 	/* GUI with the Settings
@@ -234,6 +232,7 @@ public class GUISettings extends JFrame{
 			return 3;
 		}
 	}
+	
 	//Query for the simple Perlin Noise, Polilyne V2
 	public int polyLineV2() {
 		

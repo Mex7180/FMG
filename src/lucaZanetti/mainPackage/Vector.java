@@ -11,16 +11,19 @@ public class Vector {
 	 */
 	private double x;
 	private double y;
+	
 	//Constructor with the 2 vector coordinates
 	public Vector(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
+	
 	//Constructor to get a vector from the origin to the point
 	public Vector(Point p) {
 		this.x = p.x;
 		this.y = p.y;
 	}
+	
 	//Constructor to get a vector between two points
 	public Vector(Point Anfangspunkt, Point Endpunkt) {
 		this.x = Endpunkt.x-Anfangspunkt.x;

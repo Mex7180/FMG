@@ -7,16 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
 import lucaZanetti.GUI.ErrorMessage;
 
 public class SettingsMethods {
@@ -37,7 +27,7 @@ public class SettingsMethods {
 	 * in the settings file on the
 	 * computer
 	 */
-	public void safeSettings(String path) {
+	public static void safeSettings(String path) {
 		//Test if the file exist, if not a new one is created
 		File file = new File(path);
 		System.out.println(path);
@@ -81,7 +71,7 @@ public class SettingsMethods {
 	/* Method to load the settings
 	 * from the file on the computer
 	 */
-	public void loadSettings(String path) {
+	public static void loadSettings(String path) {
 		//Test if the file exists; if not: print error message as dialog window
 		File file = new File(Settings.getSettingsPath());
 		if(file.exists() == false) {

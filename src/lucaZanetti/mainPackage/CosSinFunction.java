@@ -51,7 +51,6 @@ public class CosSinFunction extends JPanel{
 		for(int x = 0; x<Settings.getWindowLengh(); x++) {
 			xPoints[x] = x;
 			yPoints[x] = (int)(100+valueOf(x, a, b, omega)+shiftInY);
-			
 		}
 	}
 	

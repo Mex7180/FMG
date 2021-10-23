@@ -10,16 +10,14 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		//Load the settings and safe them with the corresponding variables in the settings class
-	SettingsMethods sM = new SettingsMethods();
 		if(Paths.get(Settings.getSettingsPath()).toFile().exists() == false) {
 			//File has to be created
-			FileMethods Fm = new FileMethods();
-			Fm.createNewFile(Paths.get(Settings.getSettingsPath()));
-			sM.safeSettings(Settings.getSettingsPath());
-			sM.loadSettings(Settings.getSettingsPath());
+			FileMethods.createNewFile(Paths.get(Settings.getSettingsPath()));
+			SettingsMethods.safeSettings(Settings.getSettingsPath());
+			SettingsMethods.loadSettings(Settings.getSettingsPath());
 		} else {
 			//File exists allready
-			sM.loadSettings(Settings.getSettingsPath());
+			SettingsMethods.loadSettings(Settings.getSettingsPath());
 		}
 		System.out.println("[FGM] The settings are saved at: "+Settings.getSettingsPath()); // =settings Path
 		

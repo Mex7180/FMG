@@ -7,8 +7,6 @@ import java.util.Random;
 
 import javax.swing.JPanel;
 
-
-
 public class SFMountain extends JPanel{
 	/* Class to create a mountain
 	 * consisting of multiply snow flakes
@@ -54,6 +52,7 @@ public class SFMountain extends JPanel{
 			startPoint = endPoint;
 		}
 	}
+	
 	//Method to draw the component: calls createSFMountain
 	public void paintComponent(Graphics g) {
 		createSFMountain(g);

@@ -15,7 +15,6 @@ public class CreateSnowFlake extends JPanel{
 	private Point endPoint;
 	private int maxAmountLayers;
 	private int height = Settings.getWindowHeight();
-	private boolean createSnowFlake = true;
 
 	private ArrayList<Point> allPoints = new ArrayList<>();
 	/* Constructor for the snow flake
@@ -31,6 +30,7 @@ public class CreateSnowFlake extends JPanel{
 		this.maxAmountLayers = maxLayers;
 		allPoints.add(startPoint);
 	}
+	
 	/* recursive method to draw the snow flake
 	 * calculate the vector between start- and endpoint
 	 * Calculate the 3 new points with vector
@@ -69,16 +69,19 @@ public class CreateSnowFlake extends JPanel{
 		}	
 	}
 	
-	public void paint(Graphics g) { //Pain method for the graphic method
+	//Pain method for the graphic method
+	public void paint(Graphics g) { 
 		newSF(g, startPoint, endPoint, maxAmountLayers, 1);
 	}
 	
-	public void fillMountain(Graphics g) { //Fill the area under the curve --> fill the mountain
+	//Fill the area under the curve --> fill the mountain
+	public void fillMountain(Graphics g) { 
 		
 		int[] xPoints = new int[allPoints.size()+2];
 		int[] yPoints = new int[allPoints.size()+2];
 		
-		for(int i = 0; i < allPoints.size(); i++) { //get x and y coordinates out of the points into an Array
+		//get x and y coordinates out of the points into an Array
+		for(int i = 0; i < allPoints.size(); i++) { 
 			Point p = allPoints.get(i);
 			xPoints[i] = p.x;
 			yPoints[i] = height- p.y;
@@ -93,5 +96,4 @@ public class CreateSnowFlake extends JPanel{
 		g.fillPolygon(xPoints, yPoints, xPoints.length);
 		allPoints.clear();
 	}
-
 }

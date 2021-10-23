@@ -20,6 +20,7 @@ public class CantorDust extends JPanel{
 	
 	private int[] xPoints = new int[4];
 	private int[] yPoints = new int[4];
+	
 	//Constructor for the extended JPanel
 	 public CantorDust(){
 		 
@@ -28,6 +29,7 @@ public class CantorDust extends JPanel{
 		 setName("Cantor dust");
 		 setVisible(true);
 	 }
+	 
 	 /* Paint function, paints the first bar and starts the generation 
 	  * by calling the recursive function paintDust()
 	  */
@@ -41,6 +43,7 @@ public class CantorDust extends JPanel{
 		 g.fillPolygon(xPoints, yPoints, xPoints.length);
 		 paintDust(a, b, thisLayer, maxLayer, g);
 	 }
+	 
 	 /* Recursive function to generate the dust
 	  * Takes two points, the actual layer/this iteration as int
 	  * the max. amount of layers/iterations as int and the graphics 

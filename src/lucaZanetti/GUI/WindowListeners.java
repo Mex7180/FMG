@@ -1,7 +1,5 @@
 package lucaZanetti.GUI;
 
-
-
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -13,12 +11,17 @@ import lucaZanetti.mainPackage.Settings;
 import lucaZanetti.mainPackage.SettingsMethods;
 
 public class WindowListeners implements WindowListener{
+	/* Class to listen to windowClosing event
+	 * Opens a JOptionPane with two options:
+	 * 1. closing down everything
+	 * 2. if cancel is pressed: return to the window before
+	 */
 	JFrame mainGUI = GUIMain.mainFrame;
 	JFrame fractalFrame = FractalGUI.fractalGUI;
 	JFrame settingsFrame = GUISettings.getFrame();
 	JFrame graphicsFrame = Graphic.getFrame();
 	
-	
+	//WindowClosing event with the query and specific reaction
 	public void windowClosing(WindowEvent e) {
 		int Eingabe = JOptionPane.showConfirmDialog(null, "Do you want to close the program?", "WARNING" , 0);
 		

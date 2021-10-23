@@ -2,12 +2,6 @@ package lucaZanetti.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.Image;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Paths;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import lucaZanetti.mainPackage.Settings;
-
 
 public class GUIMain extends JFrame{
 	/* First appearing GUI

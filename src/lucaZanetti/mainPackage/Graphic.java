@@ -1,31 +1,15 @@
 package lucaZanetti.mainPackage;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.TextArea;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.nio.file.Path;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-
 import lucaZanetti.GUI.WindowListeners;
-
 
 public class Graphic extends JFrame{
 	/* Class where all the different generations are called from
 	 * JFrame object, where the chosen JPanel (generation) is added
-	 * 
 	 */
 	private Point SFPStart = Settings.getStartPunktSF();
 	private Point SFPEnd = Settings.getEndPunktSF();
@@ -49,10 +33,10 @@ public class Graphic extends JFrame{
 		this.setLocation(Settings.WindowXPosition, Settings.WindowYPosition);
 		int Case = Settings.Case;
 		/*Case 0: Polyline V1
-		* Case 2: Julia Menge
+		* Case 2: Julia Set
 		* Case 3: Snow flake by Koch
 		* Case 4: Mountain out of snow flakes
-		* Case 5: Midpointdisplacement 
+		* Case 5: Midpoint displacement 
 		* Case 6: Sierpinski-triangle
 		* Case 7: Cantor-Dust
 		* Case 8: Frequencies stacking 
@@ -79,12 +63,9 @@ public class Graphic extends JFrame{
 		}else if(Case == 9) {
 			getContentPane().add(new PolyLineV2(), BorderLayout.CENTER);
 			
-		}else{
-			System.out.println("Fehler: Diesen Case gibt es nicht!");
 		}
 		
 		this.setVisible(true);
-		
 	}
 	
 	//Create the frequencies and overlap them + show function in textarea
@@ -109,7 +90,3 @@ public class Graphic extends JFrame{
 		this.frame = frame;
 	}
 }
-	
-	
-
-

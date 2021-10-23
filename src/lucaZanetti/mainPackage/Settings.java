@@ -1,9 +1,7 @@
 package lucaZanetti.mainPackage;
 
 import java.awt.Point;
-import java.io.File;
 import java.nio.file.Paths;
-import java.security.CodeSource;
 import java.util.ArrayList;
 
 public class Settings {
@@ -56,12 +54,13 @@ public class Settings {
 	public static Point BMPD = new Point(500, 400);
 	public static int factorGaussianRand = 6;
 	
-	//getters and setters for all variables
+	//Method to refresh the path to images and settings
 	private static void refreshPaths() {
 		setSettingsPath(Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParent().toString()+"/res/FMGSettings.txt");
 		setImagePath(Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParent().toString()+"/res/");
 	}
 	
+	//getters and setters for all variables
 	public static String getImagePath() {
 		refreshPaths();
 		return imagePath;

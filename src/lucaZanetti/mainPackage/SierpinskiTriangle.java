@@ -6,7 +6,6 @@ import java.awt.Point;
 
 import javax.swing.JPanel;
 
-
 public class SierpinskiTriangle extends JPanel{
 	/* Class to create a Sierpinski triangle 
 	 * Creates an JPanel and draws the Sierpinksi triangle on it
@@ -21,6 +20,7 @@ public class SierpinskiTriangle extends JPanel{
 	private Point C = new Point((int)(50+sidelenght/2), 100);
 	private int[] xPoints = new int[3];
 	private int[] yPoints = new int[3];
+	
 	//Constructor for the class, creates an JPanel object
 	public SierpinskiTriangle(){
 		setSize(windowLengh, windowHight);
@@ -28,10 +28,12 @@ public class SierpinskiTriangle extends JPanel{
 		setName("Sierpinski-Dreieck");
 		setVisible(true);
 	}
+	
 	//Method to paint the component, calls the private createSierpnksiTriangle()
 	public void paintComponent(Graphics g) {
 		createSierpinskiTriangle(A, B, C, maxLayer, thisLayer, g);
 	}
+	
 	/* Method for the generation
 	 * Firstly all the vectors of the input points are calculated
 	 * Then the vectors are divided by two and the new points calculated

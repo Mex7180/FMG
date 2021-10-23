@@ -2,12 +2,10 @@ package lucaZanetti.mainPackage;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.stream.IntStream;
 
 import javax.swing.JPanel;
-import javax.swing.text.ChangedCharSetException;
 
 public class PolyLineV2 extends JPanel{
 	/* Class to create a polyline
@@ -32,12 +30,14 @@ public class PolyLineV2 extends JPanel{
 		panel.setBackground(Color.WHITE);
 		panel.setVisible(true);
 	}
+	
 	/* Paint method to paint the generation when the
 	 * JPanel object is created
 	 */
 	public void paintComponent(Graphics g) {
 		draw(g, 1, yPoints, createRandomValues(amountOfPoints+1, 100*factorYValue));
 	}
+	
 	/* Private recursive method to calculate and later draw the generation
 	 * Firstly the amount of used points per octave is calculated
 	 * After the points ,which are used in the generation, are chosen
@@ -103,8 +103,8 @@ public class PolyLineV2 extends JPanel{
 			g.drawPolyline(xPoints, yPoints, yPoints.length);
 		}
 	}
-	/* Method to create an Array with a certain amount of random values
-	 */
+	
+	// Method to create an Array with a certain amount of random values
 	private int[] createRandomValues(int amount, int maxValue) { 
 		int[] values = new int[amount];
 		
